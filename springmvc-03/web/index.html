@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script src="resources/js/jquery.js"></script>
+    <script>
+        function sendJson() {
+            var id = $("[name=id]").val();
+            var name = $("[name=name]").val();
+            //创建json对象
+            var user = {id: id, name: name};
+            //将json对象转换成json字符串
+            var jsonStr = JSON.stringify(user);
+
+            //发送ajax异步请求，把json数据作为参数发给服务器
+            $.ajax({
+                url: "sendJson",
+                type: "post",
+                data: jsonStr,//发送的数据是json数据
+                contentType: "application/json",//请求头contentType,指定发送的数据是json数据
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+
+
+        /*function getJson() {
+            $.get("getJson", function (data) {
+                $("span").text(data.id + "---" + data.name);
+            }, "json");
+        }*/
+
+        /*function getJson() {
+            $.get("getJson", function (data) {
+                var text = "";
+                $.each(data, function (index, jsonObj) {
+                    text+=jsonObj.id + "--" + jsonObj.name + "<br/>";
+                })
+                $("span").html(text);
+            }, "json");
+        }*/
+
+        function getJson() {
+            $.get("getJson", function (data) {
+                $("span").html(data);
+            });
+        }
+    </script>
+
+</head>
+<body>
+    <div align="center">
+        ID:<input type="text" name="id"><br><br>
+        NAME:<input type="text" name="name"><br><br>
+
+        <button onclick="sendJson()">sendJson()测试</button>
+    </div>
+
+    <hr>
+
+    <div align="center">
+        <span style="color: red;"></span>
+
+        <button onclick="getJson()">getJson()测试</button>
+    </div>
+
+    <hr>
+
+    <div align="center">
+        <h3>
+            <a href="download">下载照片功能</a>
+        </h3>
+
+        <hr>
+
+        <!--多部件表单-->
+        <form action="upload" method="post" enctype="multipart/form-data">
+            点击此处添加: <input type="file" name="pic"><br><br>
+            描述: <input type="text" name="desc"><br><br>
+                    <input type="submit" value="上传">
+        </form>
+    </div>
+</body>
+</html>

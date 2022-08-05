@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style>
+        tr {
+            height: 40px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        div:nth-child(3) {
+            position: relative;
+            top: 50px;
+        }
+
+        div:nth-child(1) {
+            position: absolute;
+            left: 1400px;
+            top: 30px;
+        }
+    </style>
+
+    <script src="jquery/jquery.js"></script>
+    <script>
+        //加载事件
+        $(function () {
+            //发ajax请求，查询所有员工
+            $.get("allEmp", function (data) {
+                //data -- json对象数组
+                var table = $("table");
+                $.each(data, function (index, emp) {
+                    table.append("<tr alt='" + emp.id + "'>" +
+                        "<td>" + emp.id + "</td>" +
+                        "<td>" + emp.name + "</td>" +
+                        "<td>" + emp.age + "</td>" +
+                        "<td>" + emp.sex + "</td>" +
+                        "<td>" + emp.email + "</td>" +
+                        "<td>" +
+                        "<a href='javascript:toUpdate(" + emp.id + ")' >修改</a> &emsp;" +
+                        "<a href='javascript:deleteEmp(" + emp.id + ")' alt='" + emp.id + "'>删除</a>" +
+                        "</td>" +
+                        "</tr>");
+                })
+            }, "json");
+        });
+
+        function deleteEmp(id) {
+            //发送ajax请求，通过id删除员工
+            $.post("delEmp", "id=" + id, function (data) {
+                if (data == "0") {
+                    alert("删除失败")
+                } else if (data == "1") {
+                    $("[alt=" + id + "]").remove();
+                }
+            });
+        }
+
+        function saveEmp() {
+            var id = $("[name=id]").val();
+            var name = $("[name=name]").val();
+            var age = $("[name=age]").val();
+            var sex = $("[name=sex]").val();
+            var email = $("[name=email]").val();
+            var emp = {name: name, age: age, sex: sex, email: email};
+
+            if(id) {//有值
+                //发ajax请求去修改员工
+                $.post("updateEmp", emp, function (data) {
+                    console.log(data)
+                    if (data=="0") {
+                        alert("修改失败")
+                    } else if (data=="1") {
+                        var tr = $("[alt="+id+"]");
+                        tr.children("td:eq(1)").text(name);
+                        tr.children("td:eq(2)").text(age);
+                        tr.children("td:eq(3)").text(sex);
+                        tr.children("td:eq(4)").text(email);
+                    }
+                });
+            }else {//没值
+                //ajax的异步
+                $.post("saveEmp", emp, function (emp) {
+                    $("table").append("<tr alt='" + emp.id + "'>" +
+                        "<td>" + emp.id + "</td>" +
+                        "<td>" + emp.name + "</td>" +
+                        "<td>" + emp.age + "</td>" +
+                        "<td>" + emp.sex + "</td>" +
+                        "<td>" + emp.email + "</td>" +
+                        "<td>" +
+                        "<a href='javascript:toUpdate(" + emp.id + ")'>修改</a> &emsp;" +
+                        "<a href='javascript:deleteEmp(" + emp.id + ")' alt='" + emp.id + "'>删除</a>" +
+                        "</td>" +
+                        "</tr>");
+                }, "json");
+            }
+
+            //清空表单并隐藏
+            $("fm").hide();
+            $("[name=name]").val("");
+            $("[name=age]").val("");
+            $("[name=sex]").val('male');
+            $("[name=email]").val("");
+        }
+
+        function toUpdate(id) {
+
+            $("#fm").show();
+            var tr = $("[alt=" + id + "]");
+
+            var id = tr.children("td:eq(0)").text();
+            $("[name=id]").val(id);
+
+            var name = tr.children("td:eq(1)").text();
+            $("[name=name]").val(name);
+
+            var age = tr.children("td:eq(2)").text();
+            $("[name=age]").val(age);
+
+            var sex = tr.children("td:eq(3)").text();
+            $("[name=sex]").val([sex]);
+
+            var email = tr.children("td:eq(4)").text();
+            $("[name=email]").val(email);
+        }
+    </script>
+</head>
+<body>
+
+<div>
+    <button onclick="$('#fm').show()">添加</button>
+</div>
+
+<div align="center">
+    <table border="1px" width="750px" cellpadding="0px">
+        <tr>
+            <th>ID</th>
+            <th>姓名</th>
+            <th>年龄</th>
+            <th>性别</th>
+            <th>邮箱</th>
+        </tr>
+    </table>
+</div>
+
+<div id="fm" style="display: none" align="center">
+         <input type="hidden" name="id">
+    姓名：<input type="text" name="name"><br><br>
+    年龄：<input type="text" name="age"><br><br>
+    性别：<input type="radio" name="sex" value="男">男
+    <input type="radio" name="sex" value="女">女
+    <br><br>
+    邮箱：<input type="text" name="email"> <br><br>
+    <input type="button" value="提交" onclick="saveEmp()">
+
+    <input type="button" value="取消">
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.le.dao.EmpMapper">
+
+    <select id="allEmp" resultType="com.le.domain.Emp">
+        select * from emps
+    </select>
+
+    <!--public void delEmp(Integer id);-->
+    <delete id="delEmp">
+        delete from emps where id=#{id}
+    </delete>
+
+    <!--public void saveEmp(Emp emp)-->
+    <insert id="saveEmp" useGeneratedKeys="true" keyProperty="id">
+        insert into emps values(default, #{name}, #{age}, #{sex}, #{email})
+    </insert>
+
+    <!--public void updateEmp(Emp emp);-->
+
+    <update id="updateEmp">
+        update emps set name=#{name},age=#{age},sex=#{sex},email#{email}
+        where id = #{id}
+    </update>
+</mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--指定IOC容器扫描的包-->
+    <context:component-scan base-package="com.le"/>
+
+    <!--处理静态资源的请求-->
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+
+    <!--开启springmvc的多部件解析器 == 就能上传文件-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--指定编码-->
+        <property name="defaultEncoding" value="UTF-8"/>
+        <!--限制上传文件的大小-->
+        <property name="maxUploadSize" value="10485760"/>
+    </bean>
+
+    <!--配置视图解析器InternalResourceViewResolver-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

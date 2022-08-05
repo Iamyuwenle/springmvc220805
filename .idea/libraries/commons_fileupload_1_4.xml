@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="commons-fileupload-1.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/commons-fileupload-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/jackson-annotations-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/jackson-core-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/jackson-databind-2.11.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/lombok-1.18.24.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-aop-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-beans-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-context-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-core-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-expression-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-web-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-03/web/WEB-INF/lib/spring-webmvc-5.2.7.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

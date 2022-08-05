@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="commons-collections4-4.2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/commons-collections4-4.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/commons-compress-1.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/poi-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/poi-ooxml-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/poi-ooxml-schemas-4.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/standard.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/xmlbeans-3.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

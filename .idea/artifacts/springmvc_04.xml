@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" build-on-make="true" name="springmvc-04">
+    <output-path>$PROJECT_DIR$/out/artifacts/springmvc_04</output-path>
+    <root id="root">
+      <element id="archive" name="springmvc_04.jar">
+        <element id="module-output" name="springmvc-04" />
+      </element>
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="springmvc-03:war exploded">
+    <output-path>$PROJECT_DIR$/../../tomcat/apache-tomcat-9.0.34/webapps/springmvc-03</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="springmvc-03" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="springmvc-03/web/Web" />
+    </root>
+  </artifact>
+</component>

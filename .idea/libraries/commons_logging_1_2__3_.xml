@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="commons-logging-1.2 (3)">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/lombok-1.18.24.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-aop-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-beans-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-context-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-core-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-expression-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-web-5.2.7.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/springmvc-02/web/WEB-INF/lib/spring-webmvc-5.2.7.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

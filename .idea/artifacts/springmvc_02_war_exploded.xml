@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" build-on-make="true" name="springmvc-02:war exploded">
+    <output-path>$PROJECT_DIR$/../../tomcat/apache-tomcat-9.0.34/webapps/springmvc-02</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="springmvc-02" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-collections4-4.2" />
+          <element id="library" level="project" name="commons-logging-1.2 (3)" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="springmvc-02/web/Web" />
+    </root>
+  </artifact>
+</component>
